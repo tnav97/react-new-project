@@ -6,11 +6,11 @@ function Login() {
     const [user,setUser]=useState();
     const auth=useAuth();
 const location=useLocation()
-    // const redirectPath =location.state?.path || '/';
+    const redirectPath =location.state?.path || '/';
 const navigate=useNavigate();
 const handleLogin =()=>{
 auth.login(user);
-navigate("/")
+navigate(redirectPath,{replace:true})
 }
     return (<div>
         <label>UserName:{' '}</label>
